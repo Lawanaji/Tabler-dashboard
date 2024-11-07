@@ -13,38 +13,38 @@ import { Link, useLocation } from "react-router-dom";
 const Navigation = ({ closeModal }) => {
   const navItems = [
     {
-      name: "Home",
+      name: "Main",
       path: "/dashboard",
       icon: <House size={25} />,
     },
     {
       name: "Interface",
-      path: "/interface",
+      path: "/dashboard/interface",
       icon: <Package size={25} />,
     },
     {
       name: "Components",
-      path: "/components",
+      path: "/dashboard/components",
       icon: <CalendarBlank size={25} />,
     },
     {
       name: "Pages",
-      path: "/pages",
+      path: "/dashboard/pages",
       icon: <File size={25} />,
     },
     {
       name: "Form",
-      path: "/form",
+      path: "/dashboard/form",
       icon: <CheckSquareOffset size={25} />,
     },
     {
       name: "Gallery",
-      path: "/gallery",
+      path: "/dashboard/gallery",
       icon: <ImageSquare size={25} />,
     },
     {
       name: "Documentation",
-      path: "/documentation",
+      path: "/dashboard/documentation",
       icon: <Files size={25} />,
     },
   ];
@@ -53,6 +53,7 @@ const Navigation = ({ closeModal }) => {
 
   const NavLink = ({ item }) => {
     const isActive = location.pathname === item.path;
+
     return (
       <li>
         <Link

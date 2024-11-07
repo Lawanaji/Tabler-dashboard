@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import React, { useState } from "react";
+import React from "react";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Interface from "./pages/dashboard/interface/Interface";
 import Components from "./pages/dashboard/component/Components";
@@ -7,10 +7,10 @@ import Pages from "./pages/dashboard/pages/Pages";
 import Form from "./pages/dashboard/form/Form";
 import Gallery from "./pages/dashboard/gallery/Gallery";
 import Document from "./pages/dashboard/documents/Document";
-import Home from "./pages/dashboard/home/Home";
 import Login from "./pages/auth/login/Login";
 import Signup from "./pages/auth/Signup";
 import { useAuth } from "./hooks/useAuth";
+import Main from "./pages/dashboard/main/Main";
 
 const PrivateRoute = ({ isAuthenticated, children }) => {
   return isAuthenticated ? children : <Navigate to="/login" replace />;
@@ -33,7 +33,7 @@ function App() {
             </PrivateRoute>
           }
         >
-          <Route index element={<Home />} />
+          <Route index element={<Main />} />
           <Route path="interface" element={<Interface />} />
           <Route path="components" element={<Components />} />
           <Route path="pages" element={<Pages />} />
