@@ -16,7 +16,7 @@ const Login = () => {
   const onsubmit = async (data) => {
     try {
       login(data);
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.log("login failed", error);
     }

@@ -26,7 +26,7 @@ function App() {
 
         {/* Protected Routes */}
         <Route
-          path="/"
+          path="/dashboard"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
               <Dashboard />

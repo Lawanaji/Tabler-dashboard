@@ -31,9 +31,12 @@ const Header = ({ handleToggler, showNavigation }) => {
           )}
 
           <div className="hidden md:flex items-center gap-4 md:gap-6">
-            <button className="text-sm md:text-base font-semibold border-blue-500 border-2 rounded-md py-1 px-3 text-blue-500 transition duration-200">
+            <Link
+              to={"https://github.com/Lawanaji/Tabler-dashboard"}
+              className="text-sm md:text-base font-semibold border-blue-500 border-2 rounded-md py-1 px-3 text-blue-500 transition duration-200"
+            >
               Source Code
-            </button>
+            </Link>
 
             <div className="relative hidden md:block">
               <Bell size={30} className="text-gray-700" />
