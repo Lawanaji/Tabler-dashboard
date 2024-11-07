@@ -14,7 +14,7 @@ const Navigation = ({ closeModal }) => {
   const navItems = [
     {
       name: "Home",
-      path: "/",
+      path: "/dashboard",
       icon: <House size={25} />,
     },
     {
