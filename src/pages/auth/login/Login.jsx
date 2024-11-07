@@ -15,10 +15,15 @@ const Login = () => {
   const navigate = useNavigate();
   const onsubmit = async (data) => {
     try {
+      setIsLoading(true);
+      await new Promise((resolve) => setTimeout(resolve, 4000));
+
       login(data);
       navigate("/dashboard");
     } catch (error) {
-      console.log("login failed", error);
+      console.log("Login failed", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -58,10 +63,12 @@ const Login = () => {
           </div>
           <button
             onSubmit={handleSubmit(onsubmit)}
-            className="border rounded-md w-full my-5 py-2  bg-[#467fcf] text-white "
+            className="border rounded-md w-full my-5 py-2 flex justify-center items-center gap-3  bg-[#467fcf] text-white "
           >
-            Sign in
-            {isLoading ? <span>is coming</span> : null}
+            {isLoading ? (
+              <span className="inline-block w-4 h-4 border-2 border-white border-b-transparent rounded-full animate-spin"></span>
+            ) : null}
+            <span> Sign in</span>
           </button>
           <div className="flex justify-between">
             <p className="flex items-center ">
