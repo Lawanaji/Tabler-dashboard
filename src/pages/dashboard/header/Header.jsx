@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../assets/logo.svg";
 import avatar from "../../../assets/img/—Pngtree—vector avatar icon_4013749.png";
 import { Bell, List, X } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 const Header = ({ handleToggler, showNavigation }) => {
+  const [toggleProfile, setToggleProfile] = useState(false);
   return (
     <header className="container mx-auto py-2">
       <div className="w-full flex justify-between items-center">
@@ -37,7 +39,10 @@ const Header = ({ handleToggler, showNavigation }) => {
               <Bell size={30} className="text-gray-700" />
               <span className="inline-block w-3 h-3 rounded-full bg-red-500 absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2"></span>
             </div>
-            <button className="flex items-center">
+            <button
+              onClick={() => setToggleProfile(!toggleProfile)}
+              className="flex items-center"
+            >
               <span className="w-[40px] h-[40px] p-1 rounded-full">
                 <img src={avatar} alt="" />
               </span>
@@ -45,6 +50,20 @@ const Header = ({ handleToggler, showNavigation }) => {
                 <h3>Jane Pearson</h3>
                 <p>Administrator</p>
               </div>
+
+              {toggleProfile && (
+                <div className="w-[200px] h-[200px] shadow-lg rounded p-5 text-start bg-white absolute z-50 top-16">
+                  <ul className="flex flex-col justify-start gap-1 text-base">
+                    <Link>Status</Link>
+                    <Link>Profile</Link>
+                    <Link>Feedback</Link>
+                    <Link>Status</Link>
+                    <hr />
+                    <Link> Settings </Link>
+                    <Link>Logout</Link>
+                  </ul>
+                </div>
+              )}
             </button>
           </div>
         </div>

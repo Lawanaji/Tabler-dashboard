@@ -144,7 +144,6 @@ const AreaChart = () => {
     );
     chart.render();
 
-    // Clean up the chart on component unmount
     return () => {
       chart.destroy();
     };

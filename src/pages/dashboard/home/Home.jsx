@@ -14,6 +14,9 @@ const Home = () => {
 
       <div className="flex flex-col md:flex-row gap-5 items-start justify-start py-10">
         <div className="w-full md:w-1/2 shadow-lg border-[#e1e4ec] border-2">
+          <h1 className="border-b border-[#e1e4ec] font-medium py-3 px-5">
+            Development Activity
+          </h1>
           <AreaChart />
           <Table />
         </div>
