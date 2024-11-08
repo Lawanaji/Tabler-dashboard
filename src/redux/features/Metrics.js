@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
   {
-    percentage: "34",
+    percentage: "+34%",
     counts: 70,
     content: "New tickets",
   },
@@ -24,12 +24,12 @@ const initialState = [
   {
     percentage: "-29%",
     counts: "$95",
-    content: "New tickets",
+    content: "Daily earning",
   },
   {
     percentage: "-1%",
     counts: 612,
-    content: "New tickets",
+    content: "Product",
   },
 ];
 

@@ -11,7 +11,9 @@ const MetricCard = () => {
           key={index}
           className="bg-white border border-[#e1e4ec] rounded shadow-lg w-full p-4 flex flex-col justify-between gap-2"
         >
-          <p className="text-sm text-right font-bold">{metric.percentage}</p>
+          <p className="text-sm text-right font-bold text-green-700">
+            {metric.percentage}
+          </p>
           <div className="flex flex-col justify-center items-center">
             <h1 className="font-bold text-2xl">{metric.counts}</h1>
             <p>{metric.content}</p>
