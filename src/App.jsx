@@ -1,5 +1,4 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Interface from "./pages/dashboard/interface/Interface";
 import Components from "./pages/dashboard/component/Components";
@@ -9,15 +8,10 @@ import Gallery from "./pages/dashboard/gallery/Gallery";
 import Document from "./pages/dashboard/documents/Document";
 import Login from "./pages/auth/login/Login";
 import Signup from "./pages/auth/Signup";
-import { useAuth } from "./hooks/useAuth";
+
 import Main from "./pages/dashboard/main/Main";
 
-const PrivateRoute = ({ isAuthenticated, children }) => {
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
-};
-
 function App() {
-  const { isAuthenticated } = useAuth();
   return (
     <BrowserRouter>
       <Routes>
@@ -25,14 +19,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
 
         {/* Protected Routes */}
-        <Route
-          path="/dashboard"
-          element={
-            <PrivateRoute isAuthenticated={isAuthenticated}>
-              <Dashboard />
-            </PrivateRoute>
-          }
-        >
+        <Route path="/dashboard" element={<Dashboard />}>
           <Route index element={<Main />} />
           <Route path="interface" element={<Interface />} />
           <Route path="components" element={<Components />} />
